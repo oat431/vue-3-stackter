@@ -15,15 +15,21 @@
 </template>
 
 <script setup>
-import { useMeta } from 'vue-meta'
+import { useHead } from '@vueuse/head'
 import { computed } from 'vue'
 import { useStore } from 'vuex'
 
 import DefaultLayout from '../layouts/Default.vue'
 import VButton from '../components/VButton.vue'
 
-useMeta({
-    title: 'About Page',
+useHead({
+    title: 'About Page | Awesome Title',
+    meta: [
+        {
+            name: 'description',
+            content: 'About page description',
+        },
+    ],
 })
 
 const store = useStore()

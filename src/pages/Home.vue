@@ -19,7 +19,7 @@
 </template>
 
 <script setup>
-import { useMeta } from 'vue-meta'
+import { useHead } from '@vueuse/head'
 import { computed, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { useStore } from 'vuex'
@@ -27,8 +27,14 @@ import { useStore } from 'vuex'
 import DefaultLayout from '../layouts/Default.vue'
 import VButton from '../components/VButton.vue'
 
-useMeta({
-    title: 'Homepage',
+useHead({
+    title: 'Home Page | Awesome Title',
+    meta: [
+        {
+            name: 'description',
+            content: 'Home page description',
+        },
+    ],
 })
 
 const router = useRouter()
